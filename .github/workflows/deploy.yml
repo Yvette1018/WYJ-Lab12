@@ -1,0 +1,39 @@
+name: Deploy to Server
+on:
+    push:
+        branches: [main]
+
+jobs:
+    deploy:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Checkout code
+              uses: actions/checkout@v4
+
+            - name: Login to Docker Hub
+              uses: docker/login-action@v3
+              with:
+                  username: ${{ secrets.DOCKER_USERNAME }}
+                  password: ${{ secrets.DOCKER_PASSWORD }}
+
+            - name: Build and push website image
+              uses: docker/build-push-action@v5
+              with:
+                  context: .
+                  push: true
+                  tags: wyj1018/lab12-website:latest
+
+            - name: SSH to server and deploy
+              uses: appleboy/ssh-action@v1.0.3
+              with:
+                  host: ${{ secrets.SERVER_HOST }}
+                  username: root
+                  key: ${{ secrets.SERVER_SSH_KEY }}
+                  script: |
+                      cd /root/WYJ-Lab12 || git clone https://github.com/Yvette1018/WYJ-Lab12.git
+                      cd /root/WYJ-Lab12
+                      git pull origin main
+                      docker-compose down
+                      docker-compose pull
+                      docker-compose up -d
+                      docker system prune -af
