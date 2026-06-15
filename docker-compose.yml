@@ -1,0 +1,16 @@
+version: '3'
+services:
+  # 你的个人网站服务
+  website:
+    image: wyj1018/lab12-website:latest
+    build: .
+    ports:
+      - "8080:80"
+    restart: always
+
+  # 开源 Todo 应用（GitHub 开源项目，Docker 官方镜像）
+  todo:
+    image: johannesjo/super-productivity:latest
+    ports:
+      - "3000:80"
+    restart: always

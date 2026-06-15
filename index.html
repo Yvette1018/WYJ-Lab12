@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yvette's Personal Website</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        /* Background image - replace background.jpg to change background */
+        body {
+            min-height: 100vh;
+            background: linear-gradient(135deg, rgba(20, 60, 120, 0.75), rgba(50, 100, 180, 0.6)),
+                url('background.jpg') center center / cover no-repeat fixed;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 40px 20px;
+            color: #fff;
+        }
+
+        /* Main card - glassmorphism effect */
+        .profile-card {
+            width: 100%;
+            max-width: 650px;
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-radius: 20px;
+            padding: 50px 40px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        /* Avatar section */
+        .avatar-section {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .avatar-section img {
+            width: 160px;
+            height: 160px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid rgba(255, 255, 255, 0.8);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+            margin-bottom: 20px;
+        }
+
+        .avatar-section h1 {
+            font-size: 32px;
+            font-weight: 600;
+            margin-bottom: 8px;
+            letter-spacing: 1px;
+        }
+
+        .avatar-section .subtitle {
+            font-size: 18px;
+            opacity: 0.9;
+            font-weight: 300;
+        }
+
+        /* Info sections */
+        .info-section {
+            margin-top: 35px;
+        }
+
+        .info-section h2 {
+            font-size: 20px;
+            margin-bottom: 15px;
+            padding-bottom: 8px;
+            border-bottom: 2px solid rgba(255, 255, 255, 0.3);
+            font-weight: 500;
+        }
+
+        .info-list {
+            list-style: none;
+            line-height: 2;
+            font-size: 16px;
+        }
+
+        .info-list li span {
+            font-weight: 500;
+            margin-right: 10px;
+            color: #e0ecff;
+        }
+
+        /* Hobby tags */
+        .hobby-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 10px;
+        }
+
+        .tag {
+            padding: 6px 16px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 20px;
+            font-size: 14px;
+            border: 1px solid rgba(255, 255, 255, 0.25);
+        }
+
+        /* Pet section - text left, image right */
+        .pet-box {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            margin-top: 10px;
+        }
+
+        .pet-info {
+            flex: 1;
+            line-height: 2;
+            font-size: 16px;
+        }
+
+        .pet-info span {
+            font-weight: 500;
+            margin-right: 10px;
+            color: #e0ecff;
+        }
+
+        .pet-box img {
+            width: 130px;
+            height: 130px;
+            object-fit: cover;
+            border-radius: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            transition: transform 0.3s ease;
+        }
+
+        .pet-box img:hover {
+            transform: scale(1.05);
+        }
+
+        /* Cosplay photo grid */
+        .cos-gallery {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+            margin-top: 10px;
+        }
+
+        .cos-gallery img {
+            width: 100%;
+            height: 140px;
+            object-fit: cover;
+            border-radius: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            transition: transform 0.3s ease;
+        }
+
+        .cos-gallery img:hover {
+            transform: scale(1.03);
+        }
+
+        /* Footer */
+        .footer {
+            text-align: center;
+            margin-top: 40px;
+            font-size: 14px;
+            opacity: 0.8;
+        }
+
+        /* Mobile responsive */
+        @media (max-width: 500px) {
+            .profile-card {
+                padding: 35px 25px;
+            }
+
+            .avatar-section h1 {
+                font-size: 26px;
+            }
+
+            .cos-gallery img {
+                height: 120px;
+            }
+
+            .pet-box {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="profile-card">
+        <!-- Avatar & Name -->
+        <div class="avatar-section">
+            <img src="me1.jpg" alt="Photo of Yvette">
+            <h1>Wu Yuanjing · Yvette</h1>
+            <p class="subtitle">Software Engineering Student</p>
+        </div>
+
+        <!-- Basic Info -->
+        <div class="info-section">
+            <h2>Basic Information</h2>
+            <ul class="info-list">
+                <li><span>Age:</span>20 years old</li>
+                <li><span>Gender:</span>Female</li>
+                <li><span>StudentID:</span>20242171</li>
+                <li><span>Major:</span>Software Engineering</li>
+                <li><span>Grade:</span>Sophomore</li>
+                <li><span>Project:</span>Basic Development and Operation Lab12</li>
+            </ul>
+        </div>
+
+        <!-- Hobbies -->
+        <div class="info-section">
+            <h2>Hobbies & Interests</h2>
+            <ul class="info-list">
+                <li><span>Favorite color:</span>Blue</li>
+                <li><span>Music:</span>Pop music</li>
+                <li><span>Favorite group:</span>Seventeen</li>
+                <li><span>Leisure:</span>Cosplay, Cooking</li>
+                <li><span>Sports:</span>Fitness</li>
+            </ul>
+            <div class="hobby-tags">
+                <span class="tag"># Pop Music</span>
+                <span class="tag"># Blue</span>
+                <span class="tag"># Seventeen</span>
+                <span class="tag"># Cosplay</span>
+                <span class="tag"># Cooking</span>
+                <span class="tag"># Fitness</span>
+                <span class="tag"># Coding</span>
+            </div>
+        </div>
+
+        <!-- My Pet -->
+        <div class="info-section">
+            <h2>My Pet</h2>
+            <div class="pet-box">
+                <div class="pet-info">
+                    <p><span>Name:</span>Huahua</p>
+                    <p><span>Breed:</span>Chinese Rural Dog</p>
+                    <p><span>Age:</span>11 years old</p>
+                    <p>She is my most important little companion.</p>
+                </div>
+                <img src="huahua.jpg" alt="My dog Huahua">
+            </div>
+        </div>
+
+        <!-- Cosplay Gallery -->
+        <div class="info-section">
+            <h2>Cosplay Gallery</h2>
+            <div class="cos-gallery">
+                <img src="cos1.jpg" alt="Cosplay work 1">
+                <img src="cos2.jpg" alt="Cosplay work 2">
+                <img src="cos3.jpg" alt="Cosplay work 3">
+                <img src="cos4.jpg" alt="Cosplay work 4">
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer">
+            <p>© 2026 Yvette Wu | Lab12 Final Project</p>
+        </div>
+    </div>
+</body>
+
+</html>
