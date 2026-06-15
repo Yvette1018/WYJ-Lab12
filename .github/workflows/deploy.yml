@@ -30,10 +30,10 @@ jobs:
                   username: ubuntu
                   key: ${{ secrets.SERVER_SSH_KEY }}
                   script: |
-                      cd /root/WYJ-Lab12 || git clone https://github.com/Yvette1018/WYJ-Lab12.git
-                      cd /root/WYJ-Lab12
+                      cd /home/ubuntu/WYJ-Lab12 || git clone https://github.com/Yvette1018/WYJ-Lab12.git
+                      cd /home/ubuntu/WYJ-Lab12
                       git pull origin main
-                      docker-compose down
-                      docker-compose pull
-                      docker-compose up -d
+                      docker compose down
+                      docker compose pull
+                      docker compose up -d
                       docker system prune -af
